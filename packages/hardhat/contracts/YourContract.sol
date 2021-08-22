@@ -6,17 +6,17 @@ import "hardhat/console.sol";
 
 contract YourContract {
 
-  //event SetPurpose(address sender, string purpose);
+  event SetGreeting(address sender, string greeting);
 
-  string public purpose = "Building Unstoppable Apps";
+  string public greeting = "Hello";
 
   constructor() {
     // what should we do on deploy?
   }
 
-  function setPurpose(string memory newPurpose) public {
-      purpose = newPurpose;
-      console.log(msg.sender,"set purpose to",purpose);
-      //emit SetPurpose(msg.sender, purpose);
+  function setGreeting(string memory newGreeting) public {
+      greeting = newGreeting;
+      console.log(msg.sender,"set greeting to",greeting);
+      emit SetGreeting(msg.sender, greeting);
   }
 }
